@@ -19,35 +19,32 @@ public:
 };
 
 
-/*
-template < typename ValueType, typename NodeType >
-bool NodeValueLoad(ValueType& value, const NodeType& v)
+template < typename ObjType, typename ParserType >
+bool NodeValueLoad(ObjType& obj, const typename ParserType::ValueType& value)
 {
-    int array[-4];
-    value = (ValueType&)array;
     return false;
 }
-*/
 
 
-#define DEF_NODE(class, ParserType) \
-    bool NodeValueLoad(class& obj, const ParserType::ValueType& value)    \
-{                                                       \
-    ParserType parser;
+#define DEF_NODE(ObjType) \
+    template < typename ParserType >  \
+    bool NodeValueLoad(ObjType& obj, const typename ParserType::ValueType& value)    \
+    {                                                       \
+        ParserType parser;
 
 #define DEF_VALUE(member, name)  \
     if(!parser.parse_value(value, name, obj.member, VF_Required))  \
-    return false;
+        return false;
 
 #define END_NODE()      \
-    return true;    \
-}
+        return true;    \
+    }
 
 #define DEF_ARRAY(arrayClass, class, container, name)   \
     if(!parser.parse_array<arrayClass, class>(value, obj.container, name, VF_Required))  \
-    return false;
+        return false;
 
 #define DEF_MAP(mapClass, class, container, name, key, keyType)   \
     if(!parser.parse_map<mapClass, class>(value, obj.container, name, KeyGetter<offsetof(class, key), class, keyType>(), VF_Required))  \
-    return false;
+        return false;
 

@@ -25,7 +25,7 @@ public:
         while(data != nullptr)
         {
             ValueType tmpValue;
-            if(!NodeValueLoad(tmpValue, *data))
+            if(!NodeValueLoad<xml_node_parser>(tmpValue, *data))
                 return false;
             std::pair<MapType::iterator, bool> result = obj.insert(std::make_pair(getter(tmpValue), tmpValue));
             if(!result.second)
@@ -46,7 +46,7 @@ public:
         while(data != nullptr)
         {
             ValueType tmpValue;
-            if(!NodeValueLoad(tmpValue, *data))
+            if(!NodeValueLoad<xml_node_parser>(tmpValue, *data))
                 return false;
 
             obj.push_back(tmpValue);

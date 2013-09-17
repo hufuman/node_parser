@@ -50,18 +50,18 @@ public:
 //////////////////////////////////////////////////////////////////////////
 // Test Node Defination
 
-DEF_NODE(CPlayer, xml_node_parser)
+DEF_NODE(CPlayer)
     DEF_VALUE(id,       "id")
     DEF_VALUE(name,     "name")
     DEF_VALUE(leader,   "leader")
 END_NODE()
 
-DEF_NODE(CMatch, xml_node_parser)
+DEF_NODE(CMatch)
     DEF_VALUE(id,       "id")
     DEF_ARRAY(PlayerList, CPlayer,  players,    "players")
 END_NODE()
 
-DEF_NODE(CMatchHistory, xml_node_parser)
+DEF_NODE(CMatchHistory)
     DEF_VALUE(count,    "count")
     DEF_VALUE(remain,   "remain")
 
@@ -83,7 +83,7 @@ bool testPlayer()
     doc.Parse(xml_player);
     TiXmlElement* root = doc.FirstChildElement("player");
 
-    CHECK_VALUE(NodeValueLoad(player, *root));
+    CHECK_VALUE(NodeValueLoad<xml_node_parser>(player, *root));
     CHECK_VALUE(player.id == 23);
     CHECK_VALUE(player.name == "Jack");
     CHECK_VALUE(player.leader == false);
@@ -100,7 +100,7 @@ bool testMatch()
     doc.Parse(xml_match);
     TiXmlElement* root = doc.FirstChildElement("match");
 
-    CHECK_VALUE(NodeValueLoad(match, *root));
+    CHECK_VALUE(NodeValueLoad<xml_node_parser>(match, *root));
     CHECK_VALUE(match.id == 78);
     CHECK_VALUE(match.players.size() == 2);
 
@@ -124,7 +124,7 @@ bool testHistory()
     doc.Parse(xml_history);
     TiXmlElement* root = doc.FirstChildElement("history");
 
-    CHECK_VALUE(NodeValueLoad(history, *root));
+    CHECK_VALUE(NodeValueLoad<xml_node_parser>(history, *root));
 
     CHECK_VALUE(history.count == 2);
     CHECK_VALUE(history.remain == 8);

@@ -48,18 +48,18 @@ public:
 //////////////////////////////////////////////////////////////////////////
 // Test Node Defination
 
-DEF_NODE(CPlayer, json_node_parser)
+DEF_NODE(CPlayer)
     DEF_VALUE(id,       "id")
     DEF_VALUE(name,     "name")
     DEF_VALUE(leader,   "leader")
 END_NODE()
 
-DEF_NODE(CMatch, json_node_parser)
+DEF_NODE(CMatch)
     DEF_VALUE(id,       "id")
     DEF_ARRAY(PlayerList, CPlayer,  players,    "players")
 END_NODE()
 
-DEF_NODE(CMatchHistory, json_node_parser)
+DEF_NODE(CMatchHistory)
     DEF_VALUE(count,    "count")
     DEF_VALUE(remain,   "remain")
 
@@ -82,7 +82,7 @@ bool testPlayer()
     Json::Value playerValue;
     reader.parse(json_player, json_player_end, playerValue);
 
-    CHECK_VALUE(NodeValueLoad(player, playerValue));
+    CHECK_VALUE(NodeValueLoad<json_node_parser>(player, playerValue));
     CHECK_VALUE(player.id == 23);
     CHECK_VALUE(player.name == "Jack");
     CHECK_VALUE(player.leader == false);
@@ -101,7 +101,7 @@ bool testMatch()
 
     reader.parse(json_match, json_match_end, matchValue);
 
-    CHECK_VALUE(NodeValueLoad(match, matchValue));
+    CHECK_VALUE(NodeValueLoad<json_node_parser>(match, matchValue));
     CHECK_VALUE(match.id == 78);
     CHECK_VALUE(match.players.size() == 2);
 
@@ -127,7 +127,7 @@ bool testHistory()
 
     reader.parse(json_history, json_history_end, historyValue);
 
-    CHECK_VALUE(NodeValueLoad(history, historyValue));
+    CHECK_VALUE(NodeValueLoad<json_node_parser>(history, historyValue));
 
     CHECK_VALUE(history.count == 2);
     CHECK_VALUE(history.remain == 8);

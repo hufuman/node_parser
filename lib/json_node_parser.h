@@ -29,7 +29,7 @@ public:
         {
             ValueType tmpValue;
             const Json::Value& v = *ite;
-            if(!NodeValueLoad(tmpValue, v))
+            if(!NodeValueLoad<json_node_parser>(tmpValue, v))
                 return false;
             std::pair<MapType::iterator, bool> result = obj.insert(std::make_pair(getter(tmpValue), tmpValue));
             if(!result.second)
@@ -55,7 +55,7 @@ public:
         for(; ite != arr.end(); ++ ite)
         {
             const Json::Value& v = *ite;
-            if(!NodeValueLoad(obj[index], v))
+            if(!NodeValueLoad<json_node_parser>(obj[index], v))
                 return false;
             ++ index;
         }
