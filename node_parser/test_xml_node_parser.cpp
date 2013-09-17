@@ -8,12 +8,12 @@
 #include <iostream>
 
 
-#include "../tinyxml/tinyxml.h"
+#include "../3rdlib/tinyxml/tinyxml.h"
 #pragma comment(lib, "tinyxml.lib")
 
 
-#include "node_parser.h"
-#include "xml_node_parser.h"
+#include "../lib/node_parser.h"
+#include "../lib/xml_node_parser.h"
 
 
 namespace test_xml_details

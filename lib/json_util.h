@@ -2,7 +2,7 @@
 
 #include <string>
 #include <cassert>
-#include "..\json\json\json.h"
+#include "../3rdlib/json/json/json.h"
 
 #include <boost/lexical_cast.hpp>
 #include <boost/locale.hpp>

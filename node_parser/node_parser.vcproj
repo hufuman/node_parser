@@ -177,21 +177,21 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="parser"
+			Name="lib"
 			>
 			<File
-				RelativePath=".\node_parser.h"
+				RelativePath="..\lib\node_parser.h"
 				>
 			</File>
 			<Filter
 				Name="xml"
 				>
 				<File
-					RelativePath=".\xml_node_parser.h"
+					RelativePath="..\lib\xml_node_parser.h"
 					>
 				</File>
 				<File
-					RelativePath=".\xml_util.h"
+					RelativePath="..\lib\xml_util.h"
 					>
 				</File>
 			</Filter>
@@ -199,11 +199,11 @@
 				Name="json"
 				>
 				<File
-					RelativePath=".\json_node_parser.h"
+					RelativePath="..\lib\json_node_parser.h"
 					>
 				</File>
 				<File
-					RelativePath=".\json_util.h"
+					RelativePath="..\lib\json_util.h"
 					>
 				</File>
 			</Filter>

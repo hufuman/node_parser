@@ -8,12 +8,12 @@
 #include <iostream>
 
 
-#include "../json/json/json.h"
+#include "../3rdlib/json/json/json.h"
 #pragma comment(lib, "json.lib")
 
 
-#include "node_parser.h"
-#include "json_node_parser.h"
+#include "../lib/node_parser.h"
+#include "../lib/json_node_parser.h"
 
 namespace test_json_details
 {

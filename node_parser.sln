@@ -7,9 +7,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "node_parser", "node_parser\
 		{17C1786A-B9C4-45EA-BD25-D7B09D2A125D} = {17C1786A-B9C4-45EA-BD25-D7B09D2A125D}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "json", "json\json\json.vcproj", "{17C1786A-B9C4-45EA-BD25-D7B09D2A125D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "json", "3rdlib\json\json\json.vcproj", "{17C1786A-B9C4-45EA-BD25-D7B09D2A125D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tinyxml", "tinyxml\tinyxml.vcproj", "{1A019E65-69B5-42AB-A5B7-E4102A7E7AD9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tinyxml", "3rdlib\tinyxml\tinyxml.vcproj", "{1A019E65-69B5-42AB-A5B7-E4102A7E7AD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,7 +14,11 @@ int wmain(int, wchar_t* [])
     if(test_json_node_parser()
         && test_xml_node_parser())
     {
-        std::cout << "All Test Passed" << std::endl;
+        std::cout << "All Test Passed." << std::endl;
+    }
+    else
+    {
+        std::cout << "Some Test Failed." << std::endl;
     }
 
     std::cout << "press Enter to exit." << std::endl;
