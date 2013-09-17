@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "node_parser", "node_parser\node_parser.vcproj", "{CC281997-7530-4D0D-B3CF-EA63EEC9E27A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "node_parser", "test\node_parser.vcproj", "{CC281997-7530-4D0D-B3CF-EA63EEC9E27A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{1A019E65-69B5-42AB-A5B7-E4102A7E7AD9} = {1A019E65-69B5-42AB-A5B7-E4102A7E7AD9}
 		{17C1786A-B9C4-45EA-BD25-D7B09D2A125D} = {17C1786A-B9C4-45EA-BD25-D7B09D2A125D}
