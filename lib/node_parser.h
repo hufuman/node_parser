@@ -36,6 +36,10 @@ bool NodeValueLoad(ObjType& obj, const typename ParserType::ValueType& value)
     if(!parser.parse_value(value, name, obj.member, VF_Required))  \
         return false;
 
+#define DEF_VALUE_FALG(member, name, flags)  \
+    if(!parser.parse_value(value, name, obj.member, flags))  \
+        return false;
+
 #define END_NODE()      \
         return true;    \
     }

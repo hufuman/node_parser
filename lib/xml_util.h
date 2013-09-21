@@ -8,13 +8,7 @@
 #include <boost/tokenizer.hpp>
 
 
-
-typedef char Utf8Char;
-typedef unsigned int uint32_t;
-typedef unsigned __int64 uint64_t;
-typedef std::wstring Utf16String;
-#define nullptr NULL
-
+#include "data_def.h"
 
 namespace xml_util
 {
@@ -100,7 +94,7 @@ namespace xml_util
         if(result == nullptr)
             return false;
 
-        target = boost::locale::conv::utf_to_utf<wchar_t>(result, "GB2312");
+        target = boost::locale::conv::utf_to_utf<wchar_t>(result, boost::locale::conv::stop);
         return true;
     }
 

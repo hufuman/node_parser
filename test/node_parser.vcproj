@@ -212,11 +212,27 @@
 			Name="test"
 			>
 			<File
+				RelativePath=".\data_def.h"
+				>
+			</File>
+			<File
+				RelativePath=".\test_data_def.h"
+				>
+			</File>
+			<File
 				RelativePath=".\test_json_node_parser.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\test_node_parser.h"
+				>
+			</File>
+			<File
+				RelativePath=".\test_verifier.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\test_verifier.h"
 				>
 			</File>
 			<File

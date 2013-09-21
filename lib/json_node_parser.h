@@ -11,7 +11,7 @@ public:
     template < typename ValueType >
     bool parse_value(const Json::Value& value, const char* name, ValueType& obj, int flags)
     {
-        return (json_util::json_cast(value, name, obj) || (flags ^ VF_Required));
+        return (json_util::json_cast(value, name, obj) || ((flags & VF_Required) == 0));
     }
 
     template < typename MapType, typename ValueType, typename KeyGetter >

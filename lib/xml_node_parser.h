@@ -11,7 +11,7 @@ public:
     template < typename ValueType >
     bool parse_value(const TiXmlElement& value, const char* name, ValueType& obj, int flags)
     {
-        return (xml_util::xml_cast(value, name, obj) || (flags ^ VF_Required));
+        return (xml_util::xml_cast(value, name, obj) || ((flags & VF_Required) == 0));
     }
 
     template < typename MapType, typename ValueType, typename KeyGetter >
@@ -19,7 +19,7 @@ public:
     {
         const TiXmlElement* arr = value.FirstChildElement(name);
         if(arr == nullptr)
-            return ((flags ^ VF_Required) == 0);
+            return ((flags & VF_Required) == 0);
 
         const TiXmlElement* data = arr->FirstChildElement();
         while(data != nullptr)
@@ -40,7 +40,7 @@ public:
     {
         const TiXmlElement* arr = value.FirstChildElement(name);
         if(arr == nullptr)
-            return ((flags ^ VF_Required) == 0);
+            return ((flags & VF_Required) == 0);
 
         const TiXmlElement* data = arr->FirstChildElement();
         while(data != nullptr)
